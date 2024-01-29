@@ -1,0 +1,276 @@
+@import url("https://fonts.googleapis.com/css2?family=Rubik+Doodle+Shadow&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@300&display=swap");
+.svg-cont {
+  position: fixed;
+  top: 25%;
+  text-align: center;
+}
+
+.herosection{
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center; 
+}
+
+.button-85 {
+  padding: 0.6em 2em;
+  border: none;
+  outline: none;
+  color: rgb(255, 255, 255);
+  background: #111;
+  cursor: pointer;
+  position: relative;
+  z-index: 0;
+  border-radius: 10px;
+  user-select: none;
+  -webkit-user-select: none;
+  touch-action: manipulation;
+}
+
+.button-85:before {
+  content: "";
+  background: linear-gradient(
+    45deg,
+    #ff0000,
+    #ff7300,
+    #fffb00,
+    #48ff00,
+    #00ffd5,
+    #23aa6b,
+    #b0c115,
+    #ff00c8,
+    #ff0000
+  );
+  position: absolute;
+  top: -2px;
+  left: -2px;
+  background-size: 400%;
+  z-index: -1;
+  filter: blur(5px);
+  -webkit-filter: blur(5px);
+  width: calc(100% + 4px);
+  height: calc(100% + 4px);
+  animation: glowing-button-85 20s linear infinite;
+  transition: opacity 0.3s ease-in-out;
+  border-radius: 10px;
+}
+
+@keyframes glowing-button-85 {
+  0% {
+    background-position: 0 0;
+  }
+  50% {
+    background-position: 400% 0;
+  }
+  100% {
+    background-position: 0 0;
+  }
+}
+
+.button-85:after {
+  z-index: -1;
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  background: #222;
+  left: 0;
+  top: 0;
+  border-radius: 10px;
+}
+
+.dashboard-btn{
+  position: absolute;
+  right:-30%;
+  padding: 10px;
+  top: -30%;
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  gap: 30px;
+}
+
+.hero-container{
+  display: flex;
+  flex-direction: row;
+}
+@keyframes mymove {
+  from {
+    left: 300px;
+  }
+  to {
+    left: 0px;
+  }
+}
+@keyframes mymove2 {
+  from {
+    right: 300px;
+  }
+  to {
+    right: 0px;
+  }
+}
+@keyframes mymove3 {
+  50% {
+    transform: rotate(180deg);
+  }
+}
+@keyframes fadein {
+  from {
+    opacity: 0;
+  }
+  to {
+    opacity: 1;
+  }
+}
+@media only screen and (max-width: 700px) {
+}
+
+.codeat {
+  padding-bottom: 20px;
+}
+.amrita {
+  padding-bottom: 15px;
+}
+.codeat,
+.amrita {
+  animation: fadein 3s;
+  z-index: -999;
+  width: 30%;
+}
+.openB {
+  position: relative;
+  animation: mymove 1s;
+  animation-timing-function: ease-out;
+  padding-bottom: 60px;
+  width: 10%;
+}
+.slash {
+  position: relative;
+  animation: mymove3 1s;
+  animation-timing-function: ease-out;
+  padding-bottom: 60px;
+  width: 10%;
+}
+.closeB {
+  width: 10%;
+  position: relative;
+  animation: mymove2 1s;
+  animation-timing-function: ease-out;
+  padding-bottom: 60px;
+}
+.hero-container {
+  height: 100vh;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  box-shadow: inset 0 0 0 1000px rgba(0, 0, 0, 0.2);
+  object-fit: contain;
+}
+
+.hero-container {
+}
+
+@import url(https://fonts.googleapis.com/css?family=Anonymous+Pro);
+
+/* Global */
+.line {
+  position: relative;
+  width: 24em;
+  margin: 0 auto;
+  border-right: 2px solid rgba(255, 255, 255, 0.75);
+  font-size: 180%;
+  text-align: center;
+  white-space: nowrap;
+  color: white;
+  font-family: "Raleway", sans-serif;
+  overflow: hidden;
+  transform: translateY(-50%);
+  margin-bottom: 20px;
+  margin-top: 50px;
+}
+
+.bannericon {
+  width: 10px;
+}
+
+/* Animation */
+.anim-typewriter {
+  animation: typewriter 4s steps(44) infinite,
+    /* Removed the delay for infinite looping */ blinkTextCursor 500ms steps(44)
+      infinite;
+}
+
+@keyframes typewriter {
+  from {
+    width: 0;
+  }
+  to {
+    width: 14em;
+  }
+}
+
+@keyframes blinkTextCursor {
+  from {
+    border-right-color: rgba(255, 255, 255, 0.75);
+  }
+  to {
+    border-right-color: transparent;
+  }
+}
+
+@media screen and (max-width: 600px) {
+  .hero-container .openB,
+  .hero-container .closeB,
+  .hero-container .amrita,
+  .hero-container .slash,
+  .hero-container .codeat {
+  }
+
+  .hero-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  .hero-container .codeat {
+    width: 120px;
+  }
+  .hero-container .closeB {
+    top: 10px;
+  }
+  .hero-container .openB {
+    top: 10px;
+  }
+
+  .hero-container .slash {
+    top: 20px;
+  }
+
+  @keyframes typewriter {
+    from {
+      width: 0;
+    }
+    to {
+      width: 14em;
+    }
+  }
+}
+
+@media only screen and (max-width: 600px) {
+  .dashboard-btn{
+    position: absolute;
+    left: 10%;
+    right: 10%;
+  }
+}
+
+
+@media only screen and (max-width: 1505px) {
+  .dashboard-btn{
+    position: absolute;
+    right: 10%;
+  }
+}

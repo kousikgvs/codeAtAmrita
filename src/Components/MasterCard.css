@@ -1,0 +1,108 @@
+@import url("https://fonts.googleapis.com/css2?family=Nunito+Sans:opsz,wght@6..12,300&display=swap");
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Anton&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Red+Hat+Display:wght@300&display=swap');
+
+.blog-post {
+  width: 100%;
+  height: 100%;
+  max-width: 98rem;
+  padding: 2rem;
+  background-color: #fff;
+  box-shadow: 0 1.4rem 8rem rgba(0, 0, 0, 0.2);
+  color: black;
+  display: flex;
+  align-items: center;
+  border-radius: 0.8rem;
+}
+.blog-post:hover {
+  border: 1px solid #ffffff44;
+  box-shadow: 0 7px 50px 10px #000000aa;
+  transform: scale(1.015);
+  filter: brightness(1);
+  ::before {
+    filter: brightness(0.5);
+    top: -100%;
+    left: 200%;
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  .blog-post {
+    display: block;
+    justify-content: center;
+    align-items: center;
+  }
+  .blog-post__img {
+    transform: translate(+9rem);
+    max-width: 70%;
+    margin-bottom: 1rem;
+    align-self: center;
+  }
+}
+.blog-post__img {
+  position: relative;
+  object-fit: cover;
+  /* overflow: hidden; */
+}
+.blog-post__img img {
+  transform: translateX(-6rem);
+  width: auto;
+  height: auto;
+  max-width: 100%;
+  object-fit: cover;
+  display: block;
+  border-radius: 0.8rem;
+  transition: all 0.8s;
+}
+.blog-post__img ::before {
+  content: "";
+  width: 100%;
+  height: 100%;
+  position: relative;
+  top: 0;
+  left: 0;
+  background: linear-gradient(
+    to right,
+    rgba(79, 172, 254, 0.8),
+    rgba(0, 242, 254, 0.8)
+  );
+  box-shadow: 0.5rem 0.5rem 3rem 1px rgba(0, 0, 0, 0.05);
+}
+
+.blog-post__date span {
+  display: block;
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 1.2rem;
+  font-weight: 600;
+}
+
+.blog-post__title {
+  font-size: 2rem;
+  /* margin:   0.2 rem; */
+  text-transform: uppercase;
+  color: #4facfe;
+  font-weight: 800;
+  left: 0;
+font-family: 'Red Hat Display', sans-serif;  
+align-content: flex-start;
+  position: relative;
+}
+.blog-post__text {
+  position: relative;
+  margin-bottom: 1rem;
+  font-family: 'Inter', sans-serif;
+  font-size: 1rem;
+  color: rgba(0, 0, 0, 0.7);
+}
+.blog-post__cta {
+  display: inline-block;
+  padding: 1rem 1.5rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+  text-decoration: none;
+  font-size: 0.8rem;
+  color: white;
+  background-image: linear-gradient(to right, #4facfe, #00f2fe);
+  border-radius: 0.8rem;
+}

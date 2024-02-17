@@ -13,8 +13,21 @@ import {
   getDoc,
 } from "firebase/firestore";
 import { collection, getDocs } from "firebase/firestore";
+import { ToastContainer, toast } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 const ChannelItem = ({branch , image , description}) => {
+
+  const [isJoined, setIsJoined] = useState(false);
+  
+  const notify = (event) => {
+    console.log("Event Triggered")
+    toast(event);
+  }
+  
+  const fetchBatch = () => {
+
+  }
 
   const JoinBatch = async (batchname, email) => {
     // Create a reference to the userBatch collection
@@ -39,6 +52,9 @@ const ChannelItem = ({branch , image , description}) => {
   
       // Optionally, you can update the UI or perform any other actions after joining the batch
       console.log(`Successfully joined batch: ${batchname}`);
+
+      setIsJoined(!isJoined);
+      notify(batchname)
     } catch (error) {
       console.error("Error joining batch:", error);
       // Handle the error, show a message, etc.
@@ -88,8 +104,9 @@ const ChannelItem = ({branch , image , description}) => {
         <span class="big-text">{description}</span>
         {/* <span class="regular-text"></span> */}
       </div>
-      <button className='item-button' onClick={() => JoinBatch(branch , parsedData.email)}>Join Batch</button>
-    </div>
+      <button className='item-button' onClick={() => JoinBatch(branch, parsedData.email)}>
+      {isJoined ? 'Joined Batch' : 'Join Batch'}
+    </button>    </div>
   </div>
 </div>
 </div>

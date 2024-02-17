@@ -1,3 +1,4 @@
+@import url('https://fonts.googleapis.com/css2?family=Open+Sans:ital,wght@0,300..800;1,300..800&display=swap');
 .channels-div{
     display: flex;
     flex-direction: row;
@@ -9,7 +10,8 @@
 
 .channels-heading
 {
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
-    font-size: 15px;
+    font-family: "Open Sans", sans-serif;
+    font-size: 20px;
     font-weight: 800;
+    
 }

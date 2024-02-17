@@ -1,7 +1,62 @@
 import React from 'react'
 import "./ChannelItem.css"
+import { db } from "../../firebase-config";
+import { useEffect , useState } from 'react'
+import {
+  query,
+  where,
+  updateDoc,
+  arrayUnion,
+  arrayRemove,
+  setDoc,
+  doc,
+  getDoc,
+} from "firebase/firestore";
+import { collection, getDocs } from "firebase/firestore";
 
 const ChannelItem = ({branch , image , description}) => {
+
+  const JoinBatch = async (batchname, email) => {
+    // Create a reference to the userBatch collection
+    const userBatchRef = doc(db, "userBatch", email);
+  
+    try {
+      // Check if the user already exists in the batch
+      const userBatchDoc = await getDoc(userBatchRef);
+  
+      if (userBatchDoc.exists()) {
+        // User exists, update the channelname in the existing document
+        await updateDoc(userBatchRef, {
+          channelname: arrayUnion(batchname),
+        });
+      } else {
+        // User does not exist, create a new document with the user details
+        await setDoc(userBatchRef, {
+          username: parsedData.email,
+          channelname: [batchname],
+        });
+      }
+  
+      // Optionally, you can update the UI or perform any other actions after joining the batch
+      console.log(`Successfully joined batch: ${batchname}`);
+    } catch (error) {
+      console.error("Error joining batch:", error);
+      // Handle the error, show a message, etc.
+    }
+  };   
+
+  const [parsedData, setParsedData] = useState({});
+
+  useEffect(() => {
+    const storedData = localStorage.getItem('user-data');
+    if (storedData) {
+      setParsedData(JSON.parse(storedData));
+    }
+  }, [localStorage.getItem('user-data')]);
+
+  const isLoggedIn = !!parsedData.email;
+  console.log(parsedData.email)
+
   return (
 <div class="channel-card">
 <div class="card">
@@ -33,7 +88,7 @@ const ChannelItem = ({branch , image , description}) => {
         <span class="big-text">{description}</span>
         {/* <span class="regular-text"></span> */}
       </div>
-      <button className='item-button'>Join Batch</button>
+      <button className='item-button' onClick={() => JoinBatch(branch , parsedData.email)}>Join Batch</button>
     </div>
   </div>
 </div>

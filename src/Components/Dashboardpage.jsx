@@ -240,12 +240,12 @@ export default function Dashboardpage() {
         <Typography paragraph>
           {!selectedItem ? <WelcomeDashboard /> : <></>}
           {selectedItem === 'Channels' && <Channels />}
-          {selectedItem === 'Roadmaps' && 'Display Roadmaps content here'}
-          {selectedItem === 'Assignments' && 'Display Assignments content here'}
-          {selectedItem === 'Quizzes' && 'Display Quizzes content here'}
-          {selectedItem === 'Edit Profile' && 'Display Edit Profile content here'}
-          {selectedItem === 'Saved' && 'Display Saved content here'}
-          {selectedItem === 'Logout' && 'Display Logout content here'}
+          {selectedItem === 'Roadmaps' && 'Display Roadmaps content Here'}
+          {selectedItem === 'Assignments' && 'Display Daily Tasks Here'}
+          {selectedItem === 'Quizzes' && 'Display Quizzes content Here'}
+          {selectedItem === 'Edit Profile' && 'Display Edit Profile content Here'}
+          {selectedItem === 'Saved' && 'Display Saved content Here'}
+          {selectedItem === 'Logout' && 'Display Logout content Here'}
         </Typography>
       </Box>
     </Box>

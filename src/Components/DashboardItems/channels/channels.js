@@ -19,8 +19,8 @@ useEffect(() => {
     <div className='channels'>
         <p className='channels-heading'>Channels Here</p>
         <div className='channels-div'>
-            <ChannelItem branch={"IT Branches"} image={"https://cdn-icons-png.flaticon.com/512/2818/2818072.png"} />
-            <ChannelItem branch={"Non IT branches"} image={"https://cdn-icons-png.flaticon.com/512/7991/7991055.png"}/>
+            <ChannelItem branch={"IT Branches"} image={"https://cdn-icons-png.flaticon.com/512/2818/2818072.png"} description=""/>
+            <ChannelItem branch={"Non IT branches"} image={"https://cdn-icons-png.flaticon.com/512/7991/7991055.png"} description="" />
         </div>
     </div>
   )

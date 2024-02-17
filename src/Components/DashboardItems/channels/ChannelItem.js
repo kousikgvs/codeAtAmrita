@@ -29,16 +29,8 @@ const ChannelItem = ({branch , image}) => {
     </div>
   </div>
   <div class="bottom-section">
-    <span class="title">UNIVERSE OF UI</span>
+    <span class="title">{branch}</span>
     <div class="row row1">
-      <div class="item">
-        <span class="big-text">2626</span>
-        <span class="regular-text">UI elements</span>
-      </div>
-      <div class="item">
-        <span class="big-text">100%</span>
-        <span class="regular-text">Free for use</span>
-      </div>
       <div class="item">
         <span class="big-text">38,631</span>
         <span class="regular-text">Contributers</span>
